@@ -1,3 +1,14 @@
+/**
+ * Author: Ian Champon
+ * Date: 12/2/2017
+ * 
+ * The purpose of this program is for the user to enter an X amount
+ * of units in inventory of their company. Submitting this amount will
+ * trigger the function to check against list of companies' orders willing
+ * to buy the inventory.
+ * 
+ * Assumptions: Each order is to be used only once.
+ */
 var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function($scope) {
@@ -60,7 +71,12 @@ app.controller('MainCtrl', function($scope) {
     vm.unitsSold = 0;
   }
   
-  //function used to perform the process of maximizing profits
+  /** 
+   * Function used to perform the process of maximizing profits by 
+   * prioritizing each company based on the price per unit each company
+   * is willing to pay.
+   * 
+   */
   vm.maximizeProfits = function() {
     vm.reset();
     var inventory = vm.units;
